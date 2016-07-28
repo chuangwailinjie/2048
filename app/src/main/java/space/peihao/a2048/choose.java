@@ -9,6 +9,7 @@ import at.markushi.ui.CircleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import space.peihao.a2048.update.UpdateManager;
 
 public class choose extends AppCompatActivity {
 
@@ -39,5 +40,7 @@ public class choose extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
         MyApp.getInstance().addActivity(this);
         ButterKnife.bind(this);
+        UpdateManager ud=new UpdateManager(this);
+        ud.checkUpdate();
     }
 }

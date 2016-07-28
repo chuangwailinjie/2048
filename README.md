@@ -1,9 +1,9 @@
 # Game2048
 ### 颜值很高的2048小游戏
 ####软件截图
-<img src="/screenshot/love2048.jpg" alt="screenshot" title="screenshot" width="270" height="486" />
 
-![](/screenshot/love2048.jpg)
+
+![](/screenshot/2048.png)
 
 - **下载地址** [Google Driver](https://drive.google.com/file/d/0B-dTuxrWHzSzRXFCZlRaRnlMblU/view?usp=sharing)
 
