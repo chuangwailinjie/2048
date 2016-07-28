@@ -37,6 +37,7 @@ public class choose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+        MyApp.getInstance().addActivity(this);
         ButterKnife.bind(this);
     }
 }

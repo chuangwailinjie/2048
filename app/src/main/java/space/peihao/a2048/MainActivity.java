@@ -1,6 +1,7 @@
 package space.peihao.a2048;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements my2048Layout.On20
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MyApp.getInstance().addActivity(this);
         ButterKnife.bind(this);
         initView();
     }
@@ -57,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements my2048Layout.On20
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.about:
+                Intent it=new Intent();
+                it.setClass(this,AboutActivity.class);
+                startActivity(it);
                 break;
             case R.id.share:
                 try {
@@ -100,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements my2048Layout.On20
         builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                System.exit(0);
+                MyApp.getInstance().exit();
                 dialog.dismiss();
             }
         });
