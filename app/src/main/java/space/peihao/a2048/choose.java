@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import at.markushi.ui.CircleButton;
 import butterknife.BindView;
@@ -40,7 +43,5 @@ public class choose extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
         MyApp.getInstance().addActivity(this);
         ButterKnife.bind(this);
-        UpdateManager ud=new UpdateManager(this);
-        ud.checkUpdate();
     }
 }

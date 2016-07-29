@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
@@ -147,7 +149,7 @@ public class UpdateManager
             Log.e("x1","size:  "+mHashMap.size());
             String serviceCode = mHashMap.get("version");
             // 版本判断
-            if (serviceCode != versionCode)
+            if (!serviceCode.equals(versionCode))
             {
                 Log.e("x2","x2 code:"+versionCode);
                 return true;
@@ -166,11 +168,17 @@ public class UpdateManager
      * @param context
      * @return
      */
-    private String getVersionCode(Context context)
+    public String getVersionCode(Context context)
     {
-        String versionCode ;
-        versionCode= MyApp.version;
-        return versionCode;
+        try {
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info = manager.getPackageInfo("space.peihao.a2048", 0);
+            String version = info.versionName;
+            return version;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Can't get application version_name";
+        }
     }
 
     /**

@@ -12,7 +12,6 @@ public class MyApp extends Application {
     static Context context;
     static int column=4;
 
-    public static final String version="1.1.0";
 
     private List<Activity> mList = new LinkedList<Activity>();
     private static MyApp instance;

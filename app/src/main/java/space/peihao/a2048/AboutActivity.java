@@ -12,12 +12,15 @@ import java.io.FileNotFoundException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import space.peihao.a2048.update.UpdateManager;
 
 public class AboutActivity extends AppCompatActivity {
 
 
     @BindView(R.id.main_content)
     CoordinatorLayout mainContent;
+
+
 
     @OnClick(R.id.fab_like)
     void likeClicked() {
@@ -58,4 +61,25 @@ public class AboutActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
+    /*
+
+    * */
+    @OnClick(R.id.version)
+    void checkVersion(){
+        SquareImageView imageView = new SquareImageView(this);
+        imageView.setImageResource(R.drawable.update);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("版本检测");
+        builder.setView(imageView);
+        builder.setPositiveButton("检测", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                UpdateManager ud=new UpdateManager(AboutActivity.this);
+                ud.checkUpdate();
+            }
+        });
+        builder.show();
+    };
 }

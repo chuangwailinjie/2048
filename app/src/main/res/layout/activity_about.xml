@@ -109,29 +109,50 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:id="@+id/lib"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
                     android:layout_height="wrap_content"
-                    android:text="butterknife:7.0.1\nsystembartint:1.0.3"
+                    android:text="butterknife:7.0.1\ncirclebutton1.1"
                     android:textColor="@color/dark_grey"
-                    android:textSize="13sp" />
+                    android:textSize="20dp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/version"
+                    android:clickable="true"
+                    app:backgroundTint="#9ba9ce"
+                    android:src="@drawable/ic_update_black_24dp"
+                    app:fabSize="normal"
+                    app:layout_anchorGravity="left"
+                    android:layout_alignTop="@+id/lib"
+                    android:layout_alignRight="@+id/lib"
+                    android:layout_alignEnd="@+id/lib"
+                    android:layout_marginRight="84dp"
+                    android:layout_marginEnd="84dp" />
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/fab_like"
+                    android:clickable="true"
+                    app:backgroundTint="#c4c8ce"
+                    android:src="@drawable/ic_thumb_up_black_24dp"
+                    app:layout_anchor="@id/lib"
+                    app:fabSize="normal"
+                    app:layout_anchorGravity="right|end|bottom"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/fab_like"
-        android:clickable="true"
-        app:backgroundTint="#000000"
-        android:src="@drawable/lucky"
-        app:layout_anchor="@id/lib"
-        app:fabSize="normal"
-        app:layout_anchorGravity="right|end|bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
 
 </android.support.design.widget.CoordinatorLayout>
