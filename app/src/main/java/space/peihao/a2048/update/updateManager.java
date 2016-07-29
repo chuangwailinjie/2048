@@ -108,7 +108,7 @@ public class UpdateManager
         Log.e("versionCode","versionCode:  "+versionCode);
         // 把version.xml放到网络上，然后获取文件信息
 
-        final String path = "https://raw.githubusercontent.com/chuangwailinjie/2048/master/update.xml";
+        final String path = "https://raw.githubusercontent.com/chuangwailinjie/2048/master/app/src/main/java/space/peihao/a2048/update.xml";
         new Thread()
         {
             public void run()
